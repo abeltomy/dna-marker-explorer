@@ -46,6 +46,24 @@ t("CYP2C19 and CYP2C9 composites", () => {
   assert.match(c.find(x => x.title === "CYP2C19").value, /Rapid/);
   assert.match(c.find(x => x.title === "CYP2C9").value, /Intermediate/);
 });
+t("CYP2B6 composite (*6 decreased, *18 no function)", () => {
+  const call = G => D.composites(D.analyse(M, new Map(G))).find(x => x.title === "CYP2B6");
+  assert.match(call([["rs3745274", "GG"], ["rs28399499", "TT"]]).value, /Normal/);
+  assert.match(call([["rs3745274", "GT"], ["rs28399499", "TT"]]).value, /Intermediate/);
+  assert.match(call([["rs3745274", "GT"], ["rs28399499", "TC"]]).value, /Poor/);
+  assert.match(call([["rs3745274", "TT"]]).value, /Poor/);
+  assert.match(call([["rs3745274", "GG"]]).text, /\*18 not on your chip/);
+  assert.strictEqual(call([["rs28399499", "TC"]]), undefined);
+});
+t("DPYD activity score composite", () => {
+  const call = G => D.composites(D.analyse(M, new Map(G))).find(x => x.title === "DPYD");
+  assert.match(call([["rs3918290", "CC"], ["rs67376798", "TT"], ["rs75017182", "GG"]]).value, /Normal \(activity score 2\)/);
+  assert.match(call([["rs3918290", "CC"], ["rs67376798", "TA"], ["rs75017182", "GG"]]).value, /Intermediate \(activity score 1.5\)/);
+  assert.match(call([["rs3918290", "CT"], ["rs67376798", "TT"], ["rs75017182", "GG"]]).value, /Intermediate \(activity score 1\)/);
+  assert.match(call([["rs3918290", "CT"], ["rs67376798", "TA"], ["rs75017182", "GG"]]).value, /Poor \(activity score 0.5\)/);
+  assert.match(call([["rs3918290", "TT"], ["rs75017182", "GC"]]).value, /Poor \(activity score 0\)/);
+  assert.strictEqual(call([["rs75017182", "GC"]]), undefined);
+});
 t("parses the synthetic 23andMe file", () => {
   const txt = fs.readFileSync(path.join(__dirname, "synthetic_23andme.txt"), "utf8");
   const p = D.parseGenome(txt, new Set(M.map(m => m.id)));

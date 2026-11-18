@@ -460,7 +460,7 @@ const MARKERS = [
    }
   ],
   "effect": "Severe toxicity with 5-FU/capecitabine",
-  "note": "Rare (~1%). Read together with c.2846A>T and HapB3: CPIC combines them into one activity score.",
+  "note": "Rare (~1%). See the combined DPYD call above.",
   "pmids": [
    29152729
   ],
@@ -493,7 +493,7 @@ const MARKERS = [
    }
   ],
   "effect": "Higher toxicity risk with 5-FU/capecitabine",
-  "note": "~0.7% allele frequency in Europeans, rarer elsewhere. Read together with *2A and HapB3: CPIC combines them into one activity score.",
+  "note": "~0.7% allele frequency in Europeans, rarer elsewhere. See the combined DPYD call above.",
   "pmids": [
    29152729
   ],
@@ -526,7 +526,7 @@ const MARKERS = [
    }
   ],
   "effect": "Higher toxicity risk with 5-FU/capecitabine",
-  "note": "~2% allele frequency in Europeans and South Asians. Read together with *2A and c.2846A>T: CPIC combines them into one activity score.",
+  "note": "~2% allele frequency in Europeans and South Asians. See the combined DPYD call above.",
   "pmids": [
    29152729
   ],
@@ -625,7 +625,7 @@ const MARKERS = [
    }
   ],
   "effect": "Efavirenz (HIV): CPIC suggests a lower starting dose for intermediate and poor metabolisers",
-  "note": "Common worldwide (~20–40% allele frequency, ~38% in South Asians). 516T also occurs on the rarer *9 allele, which has the same effect. If you also carry *18, read both together.",
+  "note": "Common worldwide (~20–40% allele frequency, ~38% in South Asians). 516T also occurs on the rarer *9 allele, which has the same effect. See the combined CYP2B6 call above.",
   "pmids": [
    31006110
   ],
@@ -658,7 +658,7 @@ const MARKERS = [
    }
   ],
   "effect": "Efavirenz (HIV): CPIC suggests a lower starting dose for intermediate and poor metabolisers",
-  "note": "Found mainly in people of African ancestry (~8% allele frequency); very rare elsewhere.",
+  "note": "Found mainly in people of African ancestry (~8% allele frequency); very rare elsewhere. See the combined CYP2B6 call above.",
   "pmids": [
    31006110
   ],

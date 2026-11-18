@@ -112,6 +112,24 @@
       else { v = "Poor metaboliser"; d = "Activity score " + as + ": large dose cuts or alternatives for NSAIDs, warfarin, phenytoin"; s = "act"; }
       out.push({ title: "CYP2C9", value: v, text: d, status: s });
     }
+    // CYP2B6 (CPIC efavirenz): *6 decreased function, *18 no function; *18 is missing from many chips.
+    const b6 = k("rs3745274"), b18 = k("rs28399499");
+    if (b6 !== null) {
+      const n = b6 + (b18 || 0); let v, d, s;
+      if (n >= 2) { v = "Poor metaboliser"; d = "Efavirenz: CPIC suggests considering a lower starting dose (400 or 200 mg/day)"; s = "act"; }
+      else if (n === 1) { v = "Intermediate metaboliser"; d = "Efavirenz: CPIC suggests considering 400 mg/day instead of 600 mg"; s = "act"; }
+      else { v = "Normal metaboliser"; d = "Standard efavirenz dosing" + (b18 === null ? " (*18 not on your chip)" : ""); s = "ok"; }
+      out.push({ title: "CYP2B6", value: v, text: d, status: s });
+    }
+    // DPYD activity score (CPIC fluoropyrimidines): *2A = 0, c.2846A>T and HapB3 = 0.5 each.
+    const d2a = k("rs3918290"), d2846 = k("rs67376798"), dhb3 = k("rs75017182");
+    if (d2a !== null) {
+      const as = Math.max(0, 2 - d2a - 0.5 * ((d2846 || 0) + (dhb3 || 0))); let v, d, s;
+      if (as >= 2) { v = "Normal (activity score 2)"; d = "Standard 5-FU/capecitabine dosing. Only 3 DPYD variants are tested, so this doesn't rule out DPD deficiency"; s = "ok"; }
+      else if (as >= 1) { v = "Intermediate (activity score " + as + ")"; d = "5-FU/capecitabine: CPIC recommends a reduced starting dose, then adjusting by tolerance"; s = "act"; }
+      else { v = "Poor (activity score " + as + ")"; d = "5-FU/capecitabine: CPIC advises avoiding them; if there's no alternative, a strongly reduced dose with drug-level monitoring"; s = "act"; }
+      out.push({ title: "DPYD", value: v, text: d, status: s });
+    }
     return out;
   }
 
