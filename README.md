@@ -46,14 +46,14 @@ Don't use a hosted copy you didn't check yourself. Opening the file you download
 ```bash
 node tests/test.js              # unit tests
 python3 tools/validate.py       # data checks
-python3 tools/verify_pmids.py   # needs internet; CI runs it
+python3 tools/verify_pmids.py   # needs internet
 ```
 
 To add a marker, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Status
 
-v0.1 is an early release. **10 markers still need a citation**, and the ancestry-replication tags are a first pass. Both are listed as good first issues. PMIDs are checked against PubMed by CI.
+v0.1 is an early release. **10 markers still need a citation**, and the ancestry-replication tags are a first pass. Both are listed as good first issues. Run `tools/verify_pmids.py` to check PMIDs against PubMed.
 
 ## Licence
 

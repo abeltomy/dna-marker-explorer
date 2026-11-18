@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check that every PMID in markers.js exists, and that each paper mentions the gene or rsID.
 
-Needs internet (NCBI E-utilities). Runs in CI; you can also run it locally.
+Needs internet (NCBI E-utilities).
 Writes docs/REFERENCES.md, a human-readable list for reviewers.
 
 Usage: python3 tools/verify_pmids.py
