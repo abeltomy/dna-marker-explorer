@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Privacy: no network requests, no form submission, no external scripts, fonts or images. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>DNA Marker Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<h1>DNA Marker Explorer</h1>
+<p class="sub">Open-source, offline. Compares your raw DNA file with ~70 well-studied markers. Each marker has an evidence grade, an ancestry-fit badge and PubMed references.</p>
+
+<div class="privacy">
+<b>🔒 Your file never leaves this computer.</b> It's read in your browser's memory. The page can't send anything anywhere: its Content-Security-Policy blocks every network request, and it has no server, analytics or external files. Closing the tab clears everything.
+</div>
+
+<div class="row">
+<label for="anc"><b>Your ancestry</b> <span class="small">(used only to show how well each study fits you; never guessed from your DNA)</span></label>
+<select id="anc"></select>
+</div>
+
+<label class="drop" id="drop">
+<input type="file" id="file" accept=".txt,.zip,.csv,.tsv">
+<div class="big">Drop your raw DNA file here, or click to choose</div>
+<div class="small">23andMe <code>.zip</code> or <code>.txt</code> · AncestryDNA · MyHeritage · GRCh37 build</div>
+</label>
+<div id="status">No file loaded. You're in reference mode: every possible genotype is listed for each marker.</div>
+
+<div id="summary" hidden>
+<h2>Key results</h2>
+<div class="cards" id="cards"></div>
+</div>
+
+<h2>Markers</h2>
+<div class="controls" id="cats"></div>
+<div class="controls">
+<input type="search" id="q" placeholder="Search gene, rsID, drug, trait…">
+<span class="chip on" data-ev="ABC">All grades</span><span class="chip" data-ev="A">A only</span><span class="chip" data-ev="AB">A + B</span>
+<label class="tog"><input type="checkbox" id="notable"> Only non-typical results</label>
+<button class="btn" id="copyBtn" hidden>Copy results (CSV)</button>
+<button class="btn" id="dlBtn" hidden>Download CSV</button>
+<button class="btn" id="clearBtn" hidden>Clear my data</button>
+</div>
+<textarea id="copyOut" readonly hidden></textarea>
+<table>
+<thead><tr><th>Gene / variant</th><th>Your genotype</th><th>What the studies say</th><th class="h-eff">Effect size</th><th>Grade · fit</th><th>References</th></tr></thead>
+<tbody id="tb"></tbody>
+</table>
+
+<details>
+<summary>How to read this, and its limits</summary>
+<ul class="small">
+<li><b>Grade.</b> <span class="ev evA">A</span> clinical guideline (CPIC/DPWG) or an established single-gene effect. <span class="ev evB">B</span> genome-wide significant and replicated, but a modest effect. <span class="ev evC">C</span> single study, candidate gene, or a small or inconsistent effect. Full rules: <code>docs/EVIDENCE.md</code>.</li>
+<li><b>Ancestry fit.</b> <span class="fit fit-replicated">✓ replicated</span> the association has been replicated in your ancestry group. <span class="fit fit-biology-general">~ biology general</span> not studied specifically, but the mechanism (e.g. enzyme function) applies to everyone. <span class="fit fit-unknown">? unknown</span> found mostly in other populations; the effect in yours may be smaller, larger or absent. See <code>docs/ANCESTRY.md</code>.</li>
+<li><b>Most risk variants shift odds slightly.</b> An odds ratio of 1.3 on a 10% baseline risk means about 12.5%. Lifestyle and family history usually matter more.</li>
+<li><b>Arrays miss things.</b> Rare alleles, deletions and duplications (important for CYP2D6) aren't detected, so "typical" isn't a guarantee.</li>
+<li><b>Deliberately excluded:</b> BRCA1/2 and other rare disease mutations (consumer arrays give frequent false positives) and polygenic scores (poor accuracy outside European ancestry).</li>
+<li><b>Not medical advice.</b> Confirm anything actionable with a clinical test and a doctor or genetic counsellor.</li>
+</ul>
+</details>
+<p class="small">Version <span id="ver"></span> · <span id="count"></span> markers · Open source (MIT). Check the SHA-256 of your download against the release page.</p>
+</div>
+<script src="markers.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

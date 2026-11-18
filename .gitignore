@@ -1,0 +1,13 @@
+# Never commit real genomes
+genome_*
+*ancestry*.txt
+*myheritage*
+*.vcf
+*.vcf.gz
+*.bcf
+*.zip
+data/
+!tests/synthetic_23andme.txt
+.DS_Store
+node_modules/
+__pycache__/
