@@ -372,6 +372,39 @@ const MARKERS = [
   }
  },
  {
+  "id": "rs1800462",
+  "gene": "TPMT",
+  "variant": "*2 (Ala80Pro)",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "C",
+  "alt": "G",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No *2"
+   },
+   {
+    "status": "act",
+    "text": "Intermediate TPMT activity"
+   },
+   {
+    "status": "act",
+    "text": "Low TPMT activity"
+   }
+  ],
+  "effect": "Thiopurines: CPIC dose reduction",
+  "note": "Rare (<1%). Array calls for rare variants can be false positives: confirm with a clinical test before acting.",
+  "pmids": [
+   30447069
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
   "id": "rs116855232",
   "gene": "NUDT15",
   "variant": "*3 (Arg139Cys)",
@@ -427,7 +460,73 @@ const MARKERS = [
    }
   ],
   "effect": "Severe toxicity with 5-FU/capecitabine",
-  "note": "Rare (~1%). Arrays don't test other DPYD variants.",
+  "note": "Rare (~1%). Read together with c.2846A>T and HapB3: CPIC combines them into one activity score.",
+  "pmids": [
+   29152729
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs67376798",
+  "gene": "DPYD",
+  "variant": "c.2846A>T (Asp949Val) decreased function",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "T",
+  "alt": "A",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No c.2846A>T"
+   },
+   {
+    "status": "act",
+    "text": "Intermediate DPD activity: CPIC recommends a reduced fluoropyrimidine starting dose"
+   },
+   {
+    "status": "act",
+    "text": "Reduced DPD activity: CPIC recommends a reduced starting dose; ask about DPD phenotyping"
+   }
+  ],
+  "effect": "Higher toxicity risk with 5-FU/capecitabine",
+  "note": "~0.7% allele frequency in Europeans, rarer elsewhere. Read together with *2A and HapB3: CPIC combines them into one activity score.",
+  "pmids": [
+   29152729
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs75017182",
+  "gene": "DPYD",
+  "variant": "HapB3 (c.1129-5923C>G) decreased function",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "G",
+  "alt": "C",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No HapB3"
+   },
+   {
+    "status": "act",
+    "text": "Intermediate DPD activity: CPIC recommends a reduced fluoropyrimidine starting dose"
+   },
+   {
+    "status": "act",
+    "text": "Reduced DPD activity: CPIC recommends a reduced starting dose; ask about DPD phenotyping"
+   }
+  ],
+  "effect": "Higher toxicity risk with 5-FU/capecitabine",
+  "note": "~2% allele frequency in Europeans and South Asians. Read together with *2A and c.2846A>T: CPIC combines them into one activity score.",
   "pmids": [
    29152729
   ],
@@ -463,6 +562,105 @@ const MARKERS = [
   "note": "Effect allele here is *3 (C).",
   "pmids": [
    25801146
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs10264272",
+  "gene": "CYP3A5",
+  "variant": "*6 (c.624G>A, splice defect)",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "C",
+  "alt": "T",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No *6 allele"
+   },
+   {
+    "status": "info",
+    "text": "One *6 (no-function) allele: read together with *3 above"
+   },
+   {
+    "status": "ok",
+    "text": "Two *6 alleles: non-expresser, standard tacrolimus dosing"
+   }
+  ],
+  "effect": "Tacrolimus dose (transplant)",
+  "note": "*6 is found mainly in people of African ancestry (~15% allele frequency). Anyone with at least one working *1 allele (no *3 and no *6 on it) is an expresser.",
+  "pmids": [
+   25801146
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs3745274",
+  "gene": "CYP2B6",
+  "variant": "*6 (c.516G>T, Gln172His) decreased function",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "G",
+  "alt": "T",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No *6 allele"
+   },
+   {
+    "status": "act",
+    "text": "One *6 allele: intermediate metaboliser"
+   },
+   {
+    "status": "act",
+    "text": "Two *6 alleles: poor metaboliser"
+   }
+  ],
+  "effect": "Efavirenz (HIV): CPIC suggests a lower starting dose for intermediate and poor metabolisers",
+  "note": "Common worldwide (~20–40% allele frequency, ~38% in South Asians). 516T also occurs on the rarer *9 allele, which has the same effect. If you also carry *18, read both together.",
+  "pmids": [
+   31006110
+  ],
+  "guideline": "CPIC",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs28399499",
+  "gene": "CYP2B6",
+  "variant": "*18 (c.983T>C, Ile328Thr) no function",
+  "category": "Drug response",
+  "grade": "A",
+  "ref": "T",
+  "alt": "C",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "No *18 allele"
+   },
+   {
+    "status": "act",
+    "text": "One *18 allele: intermediate metaboliser (poor if you also carry *6)"
+   },
+   {
+    "status": "act",
+    "text": "Two *18 alleles: poor metaboliser"
+   }
+  ],
+  "effect": "Efavirenz (HIV): CPIC suggests a lower starting dose for intermediate and poor metabolisers",
+  "note": "Found mainly in people of African ancestry (~8% allele frequency); very rare elsewhere.",
+  "pmids": [
+   31006110
   ],
   "guideline": "CPIC",
   "ancestry": {
@@ -1652,6 +1850,42 @@ const MARKERS = [
   }
  },
  {
+  "id": "rs10741657",
+  "gene": "CYP2R1",
+  "variant": "Vitamin D 25-hydroxylase locus",
+  "category": "Nutrition",
+  "grade": "B",
+  "ref": "A",
+  "alt": "G",
+  "genotypes": [
+   {
+    "status": "ok",
+    "text": "Typical vitamin D levels"
+   },
+   {
+    "status": "info",
+    "text": "Slightly lower 25(OH)D"
+   },
+   {
+    "status": "mod",
+    "text": "Lower 25(OH)D; higher deficiency risk"
+   }
+  ],
+  "effect": "Small shift in 25(OH)D per allele",
+  "note": "CYP2R1 makes the enzyme that turns vitamin D into 25(OH)D, the form blood tests measure. Sunlight and supplements matter far more than genotype.",
+  "pmids": [
+   20541252,
+   29343764
+  ],
+  "guideline": "",
+  "ancestry": {
+   "mechanistic": false,
+   "replicatedIn": [
+    "EUR"
+   ]
+  }
+ },
+ {
   "id": "rs174547",
   "gene": "FADS1",
   "variant": "Fatty-acid desaturase",
@@ -2276,6 +2510,39 @@ const MARKERS = [
   "note": "",
   "pmids": [
    16444273
+  ],
+  "guideline": "",
+  "ancestry": {
+   "mechanistic": true,
+   "replicatedIn": []
+  }
+ },
+ {
+  "id": "rs10246939",
+  "gene": "TAS2R38",
+  "variant": "Ile296Val (bitter-taste receptor)",
+  "category": "Traits & fitness",
+  "grade": "A",
+  "ref": "T",
+  "alt": "C",
+  "genotypes": [
+   {
+    "status": "info",
+    "text": "Likely non-taster: PTC and some bitter greens taste mild"
+   },
+   {
+    "status": "info",
+    "text": "Likely medium taster"
+   },
+   {
+    "status": "info",
+    "text": "Likely strong taster of PTC and bitter compounds in broccoli, kale and similar greens"
+   }
+  ],
+  "effect": "Explains most of the variation in tasting the bitter compound PTC",
+  "note": "One of three SNPs (with rs713598 and rs1726866) that form the PAV taster and AVI non-taster haplotypes; this one tags them well but not perfectly.",
+  "pmids": [
+   12595690
   ],
   "guideline": "",
   "ancestry": {

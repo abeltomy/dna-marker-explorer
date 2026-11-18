@@ -17,16 +17,16 @@ Look up what well-studied genetic markers say about **your own raw DNA file**: p
 
 Don't use a hosted copy you didn't check yourself. Opening the file you downloaded is the point.
 
-## What's covered (v0.1: 69 markers)
+## What's covered (v0.1: 77 markers)
 
 | Category | Examples |
 |---|---|
-| Drug response (18) | CYP2C19, CYP2C9, VKORC1, SLCO1B1, TPMT, NUDT15, DPYD, G6PD |
+| Drug response (24) | CYP2C19, CYP2C9, CYP2B6, CYP3A5, VKORC1, SLCO1B1, TPMT, NUDT15, DPYD, G6PD |
 | Heart & brain (14) | APOE, 9p21, LPA, Factor V Leiden, HFE |
 | Metabolism (9) | TCF7L2, FTO, PNPLA3 |
-| Nutrition (13) | Lactase, ALDH2, caffeine (CYP1A2), vitamin D (GC), celiac HLA tags |
+| Nutrition (13) | Lactase, ALDH2, caffeine (CYP1A2), vitamin D (GC, CYP2R1), celiac HLA tags |
 | Eyes, lungs & carrier (6) | CFH, ARMS2, SERPINA1, HbS |
-| Traits & fitness (10) | ACTN3, eye colour, earwax |
+| Traits & fitness (11) | ACTN3, eye colour, earwax, bitter taste (TAS2R38) |
 
 **Deliberately excluded:** BRCA1/2 and other rare disease mutations (arrays give frequent false positives) and polygenic scores (poor accuracy outside European ancestry). See [docs/EVIDENCE.md](docs/EVIDENCE.md).
 
